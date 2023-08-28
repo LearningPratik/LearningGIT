@@ -21,3 +21,56 @@ unmodified - unchanged
 
 Add&Commit
 This step is like taking a screenshot of a code and saving it to a given space
+ADD - adds new or changed files in working directory to Git staging
+git add <file_name>
+To unstaged the added file - git restore --staged file_name
+
+COMMIT - it is record of change
+git commit -m "some meesage about the commit"
+
+PUSH - upload local repo content to remote repo
+git push origin main
+origin meaning - name of a copy of local repo on remote repo from where we cloned this repo
+
+Step 1] GIT INIT - used to initialize git in a locally made folder and not cloned folder
+Step 2] Then make a repository on GITHUB
+Step 3] Then git remote add origin link_of_repo
+step 3 is saying = "Hey git remote add this locally created repo to origin"
+Step 4] git remote -v (to verify the newly added repo to origin)
+
+
+GIT BRANCH - checks on which branch we are currently 
+git branch -M name (to rename branch name)
+git push -u origin main (-u is like specifying a shortcut from next time onwards I will just do git push, usually used when we are working a branch or project for a longer period)
+GIT CHECKOUT branch_name (navigate to specified branch)
+git checkout -b 'new_branch_name' (this creates the branch on puts us on this branch to make changes)
+git branch -d branch_name (to delete a branch, this should be done by navigating to other branch and deleting the other branch)
+Ex : suppose we want to delete feature1 branch so, go to other branch (git checkout feature2) now write git branch -d feature1
+
+When we create a new branch for a particular feature and now we want to merge this feature with MAIN,
+First check differences in these two branch
+Suppose we are on feature1 branch and want to check with main so, 
+git diff main
+WAY 1] MERGE - git merge branch_name
+WAY 2] Create a Pull Request - it lets you tell others about the changes 
+
+When we want to get the changes which are on remote to our repo then, we use PULL COMMAND
+git pull origin main - this will get all the changes to your local from remote repo
+
+When we try to merge two branches but there are some lines where changes have occured
+EX : main file --> print"Hello, world"
+and feature1 file --> print"Hello, user"
+Now this creates a conflict (MERGE CONFLICT) - Here Git gets confused and asks us to which changes to keep
+
+UNWANTED CHANGES :
+Lets say we made some changes and stagged them (did git add) but we now dont want those changes or those changes were put by mistake, in this case we can use GIT RESET file_name (if want to reset only in 1 file) or simply git reset (if there are many files)
+
+This is for 1 unwanted commit
+Lets say we made a commit which was unwanted to we can do, git reset HEAD~1 (this will go 1 step back and git will forget the new changes which were unwanted)
+
+This is for multiple unwanted commits and want to go to a few steps back so,
+In this case we will need that commit's hash (which we can get from git log) and now do, git reset that_hash
+
+
+FORK :
+This is used to fork other's repo to our repo meaning = make a copy of other's repo on my remote repo
