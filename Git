@@ -1,0 +1,23 @@
+Git - version control system, which tracks the changes in the code and we can maintain a project
+To check version - git --version
+
+Configuring Git
+git config --global user.name "name"
+git config --global user.email "email"
+git config --list
+
+Clone&Status
+CLone - Cloning repository on local
+git clone <copied HTTP link from github>
+
+Status - Displays the status of the code
+git status
+
+4 status of git:
+untracked - new files that git doesnot yet track
+modified - where changes occured
+staged - file is ready to be committed
+unmodified - unchanged
+
+Add&Commit
+This step is like taking a screenshot of a code and saving it to a given space
